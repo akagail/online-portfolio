@@ -6,7 +6,8 @@ const QUESTS = [
     description:
       "A pixel-theme portfolio website built with React and TypeScript, featuring isometric cards and retro RPG aesthetics.",
     tech: ["React", "TypeScript", "Tailwind"],
-    link: "",
+    codeUrl: "",
+    demoUrl: "",
   },
   {
     title: "Automated Mining Script",
@@ -15,7 +16,8 @@ const QUESTS = [
     description:
       "A simple visual recognition script for a game using image recognition, OCR, and automation tools.",
     tech: ["Python", "numpy", "cv2", "pyautogui"],
-    link: "https://github.com/akagail/automated-mining-script",
+    codeUrl: "https://github.com/akagail/automated-mining-script",
+    demoUrl: "",
   },
   {
     title: "Web-Based Billing System with Image Annotation and PRM",
@@ -24,7 +26,8 @@ const QUESTS = [
     description:
       "A Web-Based Smart Billing System with Image Annotation and Patient Record Management for MSRA Ultrasound Clinic.",
     tech: ["Python", "Django", "SQLite", "Tailwind"],
-    link: "https://github.com/carlosinag/comebackcapstone",
+    codeUrl: "https://github.com/carlosinag/comebackcapstone",
+    demoUrl: "",
   },
   {
     title: "Data Analytics of crimes, Data Prediction and ML",
@@ -33,7 +36,8 @@ const QUESTS = [
     description:
       "A set of activities we've done in our Data Analytics subject. Analyzed data and made predictions using machine learning models.",
     tech: ["numpy", "pandas", "seaborn"],
-    link: "https://github.com/akagail/ITD-3B",
+    codeUrl: "https://github.com/akagail/ITD-3B",
+    demoUrl: "",
   },
 ];
 
@@ -122,15 +126,31 @@ export default function QuestsSection() {
                 ))}
               </div>
               <div className="flex gap-2">
-                <button className="btn-block text-[10px]">
-                  <span className="font-mono">▶</span> Demo
-                </button>
-                <a href={q.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-block text-[10px]">
-                  {"</>"} Code
-                </a>
+                {q.demoUrl ? (
+                  <a
+                    href={q.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-block text-[10px]"
+                  >
+                    <span className="font-mono">▶</span> Demo
+                  </a>
+                ) : null}
+
+                {q.codeUrl ? (
+                  <a
+                    href={q.codeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-block text-[10px]"
+                  >
+                    {"</>"} Code
+                  </a>
+                ) : (
+                  <span className="btn-block text-[10px] opacity-40 cursor-not-allowed">
+                    {"</>"} Code
+                  </span>
+                )}
               </div>
             </div>
           </article>
