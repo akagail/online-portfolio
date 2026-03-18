@@ -40,7 +40,7 @@ export default function Hero() {
           {/* pixel frames with images */}
           <div className="pointer-events-none absolute -left-10 top-6 h-24 w-24 -rotate-3 border border-[color:var(--panel-border)] bg-[rgba(2,6,23,0.6)]">
             <Image
-              src="/images/hero-frame-1.jfif"
+              src="/images/hero-frame-1.jpg"
               alt="Hero frame 1"
               fill
               className="object-cover opacity-80"
